@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace 'com.hadesloader.poolinjector'
-    compileSdk 34
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.hadesloader.poolinjector"
         minSdk 24
-        targetSdk 34
+        targetSdk 31
         versionCode 1
         versionName "1.0"
     }
