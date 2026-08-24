@@ -187,7 +187,8 @@ class GameAccessibilityService : AccessibilityService() {
             if (parent != null) {
                 for (i in 0 until parent.childCount) {
                     val child = parent.getChild(i)
-                    if (child.isProgressBar) {
+                    // Check if it's a progress bar by checking className
+                    if (child.className?.toString()?.contains("ProgressBar") == true) {
                         // Get progress value
                         val range = child.rangeInfo
                         if (range != null) {
@@ -255,9 +256,8 @@ class GameAccessibilityService : AccessibilityService() {
         return if (nodes.isNotEmpty()) nodes[0] else null
     }
     
-    private fun findNodesContainingText(vararg texts: String): List<AccessibilityNodeInfo> {
+    private fun findNodesContainingText(rootNode: AccessibilityNodeInfo, vararg texts: String): List<AccessibilityNodeInfo> {
         val result = mutableListOf<AccessibilityNodeInfo>()
-        val rootNode = rootInActiveWindow ?: return result
         
         for (text in texts) {
             val nodes = rootNode.findAccessibilityNodeInfosByText(text)

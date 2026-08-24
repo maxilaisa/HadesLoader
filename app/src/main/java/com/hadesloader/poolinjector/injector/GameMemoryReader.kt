@@ -6,6 +6,23 @@ import java.io.BufferedReader
 import java.io.File
 import java.io.InputStreamReader
 
+private fun ByteArray.contains(subarray: ByteArray): Boolean {
+    if (subarray.isEmpty()) return true
+    if (this.size < subarray.size) return false
+    
+    for (i in 0..(this.size - subarray.size)) {
+        var match = true
+        for (j in subarray.indices) {
+            if (this[i + j] != subarray[j]) {
+                match = false
+                break
+            }
+        }
+        if (match) return true
+    }
+    return false
+}
+
 class GameMemoryReader(private val context: Context) {
     
     data class GameState(
@@ -151,7 +168,8 @@ class GameMemoryReader(private val context: Context) {
                                          "infinity", "blackhole", "ice", "fire", "lightning")
                     
                     for (cue in knownCues) {
-                        if (data.contains(cue.toByteArray())) {
+                        val cueBytes = cue.toByteArray()
+                        if (data.contains(cueBytes)) {
                             return cue
                         }
                     }
