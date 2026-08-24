@@ -1,43 +1,53 @@
-# HadesLoader - 8 Ball Pool Trajectory Injector
+# HadesLoader - 8 Ball Pool Direct Injector
 
-An Android application that provides accurate ball trajectory prediction for 8 Ball Pool games. The injector automatically adapts to different phone screen resolutions to ensure precise trajectory calculations and table positioning.
+An Android application that provides accurate ball trajectory prediction for 8 Ball Pool games through direct APK modification. The injector modifies the game APK itself to include trajectory prediction functionality, eliminating the need for overlay permissions.
 
 ## Features
 
+- **Direct APK Injection**: Modifies the game APK to include trajectory prediction
+- **No Overlay Permissions**: Trajectory is built into the game, no overlay needed
 - **Game-Accurate Physics**: Uses real 8 Ball Pool physics constants extracted from actual game source code
 - **Precise Trajectory Prediction**: Physics-based ball trajectory calculation with realistic collision detection
-- **Resolution Adaptive**: Automatically scales to any phone screen resolution for accurate positioning
-- **Real-time Overlay**: Displays trajectory prediction directly over the game screen
+- **Resolution Adaptive**: Automatically adapts to any phone screen resolution
 - **Customizable Power**: Adjustable shot power via slider control
 - **Pocket Detection**: Visual indicators for table pockets
 - **Cushion Physics**: Realistic ball bounce and cushion collision simulation
-- **Background Service**: Runs as a foreground service without interfering with gameplay
+- **Automatic Game Detection**: Automatically detects and verifies 8 Ball Pool installation
+- **Version Compatibility**: Checks for compatible game versions before injection
 
 ## Technical Architecture
 
 ### Core Components
 
-1. **TrajectoryCalculator** (`physics/TrajectoryCalculator.kt`)
+1. **ApkModifier** (`injector/ApkModifier.kt`)
+   - APK extraction and modification engine
+   - Working directory management
+   - Trajectory code injection into game APK
+   - Modded APK preparation for installation
+
+2. **ModInstaller** (`injector/ModInstaller.kt`)
+   - Game installation detection
+   - Version compatibility checking
+   - APK path extraction
+   - Injection environment preparation
+
+3. **MainActivity** (`MainActivity.kt`)
+   - Injection process UI and control
+   - Game installation verification
+   - Progress tracking and user feedback
+   - Modded APK installation handling
+
+4. **TrajectoryCalculator** (`physics/TrajectoryCalculator.kt`)
    - Physics engine for ball movement and collision detection
    - Cushion and ball collision simulation
    - Trajectory prediction with configurable time steps
-   - Pocket path prediction
+   - Designed for integration into game's physics system
 
-2. **ResolutionManager** (`utils/ResolutionManager.kt`)
+5. **ResolutionManager** (`utils/ResolutionManager.kt`)
    - Screen resolution detection and scaling
    - Automatic table dimension calculation based on screen size
    - Coordinate transformation between different resolutions
    - Pocket position calculation
-
-3. **TrajectoryOverlayService** (`service/TrajectoryOverlayService.kt`)
-   - Android foreground service for screen overlay
-   - Real-time trajectory rendering
-   - System permission handling
-
-4. **MainActivity** (`MainActivity.kt`)
-   - User interface controls
-   - Service management
-   - Permission request handling
 
 ## Resolution Adaptation
 
@@ -106,41 +116,53 @@ The injector uses a reference resolution system to ensure accuracy across differ
 
 ## Installation
 
-1. **Enable Unknown Sources**
+1. **Install 8 Ball Pool**
+   - Download and install the official 8 Ball Pool game from Google Play Store
+   - Ensure you have version 5.0.0 or higher installed
+
+2. **Enable Unknown Sources**
    - Go to Settings > Security
    - Enable "Install from Unknown Sources"
 
-2. **Install the APK**
-   - Transfer the APK to your device
+3. **Install HadesLoader APK**
+   - Transfer the HadesLoader APK to your device
    - Open the APK file
    - Follow the installation prompts
 
-3. **Grant Permissions**
+4. **Injection Process**
    - Open the HadesLoader app
-   - Grant overlay permission when prompted
-   - The app will guide you through the permission setup
+   - The app will automatically detect if 8 Ball Pool is installed
+   - Tap "Inject Mod" to modify the game APK
+   - Wait for the injection process to complete
+   - Tap "Install Modded APK" to install the modified game
+   - Install the modded APK when prompted by the system
 
 ## Usage
 
-1. **Start the Service**
+1. **Verify Game Installation**
    - Open HadesLoader
-   - Adjust the power slider as needed
-   - Tap "Start Service"
-   - Grant overlay permission if requested
+   - Check the "Game Status" indicator
+   - Green = 8 Ball Pool detected and ready for injection
+   - Red = 8 Ball Pool not found
+   - Orange = Incompatible game version
 
-2. **Enter the Game**
-   - Open your 8 Ball Pool game
-   - The trajectory overlay will appear on screen
+2. **Inject Trajectory Mod**
+   - Tap "Inject Mod" button
+   - Wait for the injection process to complete
+   - Progress bar will show injection status
+   - When complete, "Install Modded APK" button will be enabled
 
-3. **Aim and Shoot**
-   - The red line shows the predicted ball path
-   - The green dashed line shows aim direction
-   - Blue circles indicate pocket positions
-   - White circle shows cue ball position
+3. **Install Modded Game**
+   - Tap "Install Modded APK" button
+   - System will prompt for APK installation
+   - Install the modded version of 8 Ball Pool
+   - The modded game will replace the original
 
-4. **Stop the Service**
-   - Return to HadesLoader
-   - Tap "Stop Service" to disable the overlay
+4. **Play with Trajectory**
+   - Open the modded 8 Ball Pool game
+   - Trajectory prediction will be built into the game
+   - No overlay needed - trajectory appears as part of game
+   - Play normally with trajectory assistance
 
 ## Physics Model
 
@@ -193,19 +215,29 @@ HadesLoader/
 │   ├── src/main/
 │   │   ├── java/com/hadesloader/poolinjector/
 │   │   │   ├── MainActivity.kt
+│   │   │   ├── Constants.kt
 │   │   │   ├── physics/
 │   │   │   │   └── TrajectoryCalculator.kt
 │   │   │   ├── service/
-│   │   │   │   └── TrajectoryOverlayService.kt
+│   │   │   │   ├── TrajectoryOverlayService.kt
+│   │   │   │   └── TrajectoryOverlayView.kt
+│   │   │   ├── injector/
+│   │   │   │   ├── GameAccessibilityService.kt
+│   │   │   │   ├── GameMemoryReader.kt
+│   │   │   │   └── ModInstaller.kt
+│   │   │   ├── cue/
+│   │   │   │   └── CueDetector.kt
 │   │   │   └── utils/
 │   │   │       └── ResolutionManager.kt
 │   │   ├── res/
 │   │   │   ├── layout/
 │   │   │   │   └── activity_main.xml
-│   │   │   └── values/
-│   │   │       ├── colors.xml
-│   │   │       ├── strings.xml
-│   │   │       └── themes.xml
+│   │   │   ├── values/
+│   │   │   │   ├── colors.xml
+│   │   │   │   ├── strings.xml
+│   │   │   │   └── themes.xml
+│   │   │   └── xml/
+│   │   │       └── accessibility_service_config.xml
 │   │   └── AndroidManifest.xml
 │   └── build.gradle
 ├── build.gradle
@@ -239,3 +271,7 @@ This project is for educational purposes only. Use responsibly and in accordance
 ## Disclaimer
 
 This software is intended for educational and research purposes. The developers are not responsible for any misuse of this software. Always respect game terms of service and fair play policies.
+
+## Architecture Documentation
+
+For detailed technical information about the architecture, component interactions, and design decisions, see [ARCHITECTURE.md](ARCHITECTURE.md).

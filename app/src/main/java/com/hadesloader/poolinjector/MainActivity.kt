@@ -1,246 +1,186 @@
 package com.hadesloader.poolinjector
 
 import android.content.Intent
-import android.net.Uri
-import android.os.Build
 import android.os.Bundle
-import android.provider.Settings
 import android.widget.Button
-import android.widget.SeekBar
-import android.widget.Switch
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.hadesloader.poolinjector.cue.CueDetector
-import com.hadesloader.poolinjector.injector.GameAccessibilityService
-import com.hadesloader.poolinjector.service.TrajectoryOverlayService
-import com.hadesloader.poolinjector.utils.ResolutionManager
+import com.hadesloader.poolinjector.injector.ApkModifier
+import com.hadesloader.poolinjector.injector.ModInstaller
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     
-    private lateinit var resolutionManager: ResolutionManager
-    private lateinit var cueDetector: CueDetector
-    private lateinit var startButton: Button
-    private lateinit var stopButton: Button
-    private lateinit var powerSeekBar: SeekBar
-    private lateinit var powerTextView: TextView
-    private lateinit var resolutionTextView: TextView
-    private lateinit var trajectorySwitch: Switch
-    private lateinit var currentCueTextView: TextView
+    private lateinit var modInstaller: ModInstaller
+    private lateinit var apkModifier: ApkModifier
+    private lateinit var injectButton: Button
+    private lateinit var installButton: Button
+    private lateinit var cancelButton: Button
+    private lateinit var gameStatusTextView: TextView
+    private lateinit var progressTextView: TextView
+    private lateinit var progressBar: ProgressBar
     
-    private var isServiceRunning = false
-    private var currentPower = 15f
-    private var currentCue = "Standard Cue"
+    private var injectionInProgress = false
+    private var currentModdedApkPath: String? = null
     
     companion object {
-        private const val OVERLAY_PERMISSION_REQUEST_CODE = 1234
-        private const val ACCESSIBILITY_PERMISSION_REQUEST_CODE = 1235
+        private const val INSTALL_REQUEST_CODE = 1001
     }
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         
-        resolutionManager = ResolutionManager(this)
-        cueDetector = CueDetector(this)
+        modInstaller = ModInstaller(this)
+        apkModifier = ApkModifier(this)
         
         initViews()
-        setupCueDetection()
-        updateResolutionInfo()
+        checkGameInstallation()
     }
     
     private fun initViews() {
-        startButton = findViewById(R.id.startButton)
-        stopButton = findViewById(R.id.stopButton)
-        powerSeekBar = findViewById(R.id.powerSeekBar)
-        powerTextView = findViewById(R.id.powerTextView)
-        resolutionTextView = findViewById(R.id.resolutionTextView)
-        trajectorySwitch = findViewById(R.id.trajectorySwitch)
-        currentCueTextView = findViewById(R.id.currentCueTextView)
+        injectButton = findViewById(R.id.injectButton)
+        installButton = findViewById(R.id.installButton)
+        cancelButton = findViewById(R.id.cancelButton)
+        gameStatusTextView = findViewById(R.id.gameStatusTextView)
+        progressTextView = findViewById(R.id.progressTextView)
+        progressBar = findViewById(R.id.progressBar)
         
-        startButton.setOnClickListener {
-            if (checkOverlayPermission() && checkAccessibilityPermission()) {
-                startTrajectoryService()
-            } else {
-                if (!checkOverlayPermission()) {
-                    requestOverlayPermission()
-                } else {
-                    requestAccessibilityPermission()
-                }
+        injectButton.setOnClickListener {
+            startInjection()
+        }
+        
+        installButton.setOnClickListener {
+            currentModdedApkPath?.let { path ->
+                installModdedApk(path)
             }
         }
         
-        stopButton.setOnClickListener {
-            stopTrajectoryService()
-        }
-        
-        powerSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                currentPower = progress.toFloat() / 10f
-                powerTextView.text = "Power: $currentPower"
-            }
-            
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
-            
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
-        })
-        
-        trajectorySwitch.setOnCheckedChangeListener { _, isChecked ->
-            Toast.makeText(this, "Trajectory visibility: ${if (isChecked) "ON" else "OFF"}", Toast.LENGTH_SHORT).show()
+        cancelButton.setOnClickListener {
+            cancelInjection()
         }
         
         updateButtonStates()
     }
     
-    private fun setupCueDetection() {
-        // Set up automatic cue detection from accessibility service
-        GameAccessibilityService.setGameStateListener { gameState ->
-            currentCue = gameState.currentCueName
-            runOnUiThread {
-                currentCueTextView.text = "Current Cue: $currentCue"
+    private fun checkGameInstallation() {
+        val gameStatus = modInstaller.isGameAvailable()
+        
+        when (gameStatus) {
+            is ModInstaller.GameStatus.Available -> {
+                gameStatusTextView.text = "Game Status: 8 Ball Pool ${gameStatus.version} - Ready for injection"
+                gameStatusTextView.setTextColor(android.graphics.Color.parseColor("#00FF00"))
+                Toast.makeText(
+                    this,
+                    "8 Ball Pool ${gameStatus.version} detected - Ready for injection",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            is ModInstaller.GameStatus.NotInstalled -> {
+                gameStatusTextView.text = "Game Status: 8 Ball Pool not found"
+                gameStatusTextView.setTextColor(android.graphics.Color.parseColor("#FF0000"))
+                Toast.makeText(
+                    this,
+                    "8 Ball Pool not found. Please install the game first.",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            is ModInstaller.GameStatus.IncompatibleVersion -> {
+                gameStatusTextView.text = "Game Status: Incompatible version (${gameStatus.currentVersion})"
+                gameStatusTextView.setTextColor(android.graphics.Color.parseColor("#FFA500"))
+                Toast.makeText(
+                    this,
+                    "Incompatible game version. Found: ${gameStatus.currentVersion}, Required: ${gameStatus.requiredVersion}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+        
+        updateButtonStates()
+    }
+    
+    private fun startInjection() {
+        if (injectionInProgress) return
+        
+        val gameStatus = modInstaller.isGameAvailable()
+        if (gameStatus !is ModInstaller.GameStatus.Available) {
+            Toast.makeText(this, "Game not available for injection", Toast.LENGTH_LONG).show()
+            return
+        }
+        
+        injectionInProgress = true
+        updateButtonStates()
+        progressTextView.text = "Starting injection..."
+        progressBar.visibility = ProgressBar.VISIBLE
+        
+        CoroutineScope(Dispatchers.IO).launch {
+            progressTextView.text = "Extracting game APK..."
+            
+            val result = apkModifier.injectTrajectory()
+            
+            withContext(Dispatchers.Main) {
+                when (result) {
+                    is ApkModifier.InjectionResult.Success -> {
+                        currentModdedApkPath = result.moddedApkPath
+                        progressTextView.text = "Injection complete! Ready to install."
+                        progressBar.visibility = ProgressBar.GONE
+                        installButton.isEnabled = true
+                        Toast.makeText(this@MainActivity, "Injection successful!", Toast.LENGTH_LONG).show()
+                    }
+                    is ApkModifier.InjectionResult.Failed -> {
+                        progressTextView.text = "Injection failed: ${result.reason}"
+                        progressBar.visibility = ProgressBar.GONE
+                        Toast.makeText(this@MainActivity, "Injection failed: ${result.reason}", Toast.LENGTH_LONG).show()
+                    }
+                }
                 
-                // Update power based on detected cue
-                val cueStats = cueDetector.getCueByName(currentCue)
-                if (cueStats != null) {
-                    val adjustedPower = currentPower * cueStats.powerMultiplier
-                    powerTextView.text = "Power: $currentPower (Effective: ${"%.1f".format(adjustedPower)})"
-                }
-            }
-        }
-        
-        cueDetector.setCueDetectionCallback { cueStats ->
-            currentCue = cueStats.name
-            runOnUiThread {
-                currentCueTextView.text = "Current Cue: $currentCue"
-                val adjustedPower = currentPower * cueStats.powerMultiplier
-                powerTextView.text = "Power: $currentPower (Effective: ${"%.1f".format(adjustedPower)})"
+                injectionInProgress = false
+                updateButtonStates()
             }
         }
     }
     
-    private fun updateResolutionInfo() {
-        val metrics = resolutionManager.getScreenMetrics()
-        val tableMetrics = resolutionManager.calculateTableMetrics()
+    private fun installModdedApk(apkPath: String) {
+        progressTextView.text = "Preparing installation..."
         
-        val info = """
-            Screen: ${metrics.width}x${metrics.height}
-            DPI: ${metrics.dpi}
-            Density: ${metrics.density}
-            Table: ${tableMetrics.tableWidth.toInt()}x${tableMetrics.tableHeight.toInt()}
-            Ball Radius: ${tableMetrics.ballRadius.toInt()}px
-            Aspect Ratio: ${"%.2f".format(resolutionManager.getAspectRatio())}
-            Orientation: ${if (resolutionManager.isPortrait()) "Portrait" else "Landscape"}
-        """.trimIndent()
-        
-        resolutionTextView.text = info
-    }
-    
-    private fun checkOverlayPermission(): Boolean {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            Settings.canDrawOverlays(this)
+        if (apkModifier.installModdedApk(apkPath)) {
+            progressTextView.text = "Installation prompt shown. Complete installation to finish."
+            Toast.makeText(this, "Install the modded APK when prompted", Toast.LENGTH_LONG).show()
         } else {
-            true
+            progressTextView.text = "Installation failed"
+            Toast.makeText(this, "Failed to start installation", Toast.LENGTH_LONG).show()
         }
     }
     
-    private fun checkAccessibilityPermission(): Boolean {
-        val accessibilityEnabled = try {
-            Settings.Secure.getInt(
-                contentResolver,
-                Settings.Secure.ACCESSIBILITY_ENABLED
-            ) == 1
-        } catch (e: Settings.SettingNotFoundException) {
-            false
+    private fun cancelInjection() {
+        if (injectionInProgress) {
+            injectionInProgress = false
+            apkModifier.cleanup()
+            progressTextView.text = "Injection cancelled"
+            progressBar.visibility = ProgressBar.GONE
+            updateButtonStates()
         }
-        
-        if (accessibilityEnabled) {
-            val services = Settings.Secure.getString(
-                contentResolver,
-                Settings.Secure.ENABLED_ACCESSIBILITY_SERVICES
-            )
-            return services?.contains(packageName) == true
-        }
-        
-        return false
-    }
-    
-    private fun requestOverlayPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val intent = Intent(
-                Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                Uri.parse("package:$packageName")
-            )
-            startActivityForResult(intent, OVERLAY_PERMISSION_REQUEST_CODE)
-        }
-    }
-    
-    private fun requestAccessibilityPermission() {
-        val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)
-        startActivityForResult(intent, ACCESSIBILITY_PERMISSION_REQUEST_CODE)
-    }
-    
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        when (requestCode) {
-            OVERLAY_PERMISSION_REQUEST_CODE -> {
-                if (checkOverlayPermission()) {
-                    if (checkAccessibilityPermission()) {
-                        startTrajectoryService()
-                    } else {
-                        requestAccessibilityPermission()
-                    }
-                } else {
-                    Toast.makeText(this, "Overlay permission denied", Toast.LENGTH_LONG).show()
-                }
-            }
-            ACCESSIBILITY_PERMISSION_REQUEST_CODE -> {
-                if (checkAccessibilityPermission()) {
-                    if (checkOverlayPermission()) {
-                        startTrajectoryService()
-                    } else {
-                        requestOverlayPermission()
-                    }
-                } else {
-                    Toast.makeText(this, "Accessibility permission denied", Toast.LENGTH_LONG).show()
-                }
-            }
-        }
-    }
-    
-    private fun startTrajectoryService() {
-        val intent = Intent(this, TrajectoryOverlayService::class.java).apply {
-            action = TrajectoryOverlayService.ACTION_START
-        }
-        
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            startForegroundService(intent)
-        } else {
-            startService(intent)
-        }
-        
-        isServiceRunning = true
-        updateButtonStates()
-        Toast.makeText(this, "Trajectory service started", Toast.LENGTH_SHORT).show()
-    }
-    
-    private fun stopTrajectoryService() {
-        val intent = Intent(this, TrajectoryOverlayService::class.java).apply {
-            action = TrajectoryOverlayService.ACTION_STOP
-        }
-        startService(intent)
-        
-        isServiceRunning = false
-        updateButtonStates()
-        Toast.makeText(this, "Trajectory service stopped", Toast.LENGTH_SHORT).show()
     }
     
     private fun updateButtonStates() {
-        startButton.isEnabled = !isServiceRunning
-        stopButton.isEnabled = isServiceRunning
+        val gameAvailable = modInstaller.isGameAvailable() is ModInstaller.GameStatus.Available
+        injectButton.isEnabled = !injectionInProgress && gameAvailable
+        installButton.isEnabled = currentModdedApkPath != null && !injectionInProgress
+        cancelButton.isEnabled = injectionInProgress
     }
     
     override fun onResume() {
         super.onResume()
-        updateResolutionInfo()
+        checkGameInstallation()
+    }
+    
+    override fun onDestroy() {
+        super.onDestroy()
+        apkModifier.cleanup()
     }
 }

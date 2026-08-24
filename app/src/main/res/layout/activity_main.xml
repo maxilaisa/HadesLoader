@@ -25,12 +25,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="8 Ball Pool Trajectory Injector"
+            android:text="8 Ball Pool Direct Injector"
             android:textSize="16sp"
             android:textColor="#AAAAAA"
             android:layout_marginBottom="32dp" />
 
-        <!-- Resolution Info Card -->
+        <!-- Game Status Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,36 +48,26 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Screen Information"
+                    android:text="Game Status"
                     android:textSize="18sp"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
                     android:layout_marginBottom="12dp" />
 
                 <TextView
-                    android:id="@+id/resolutionTextView"
+                    android:id="@+id/gameStatusTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Loading..."
+                    android:text="Checking game installation..."
                     android:textSize="14sp"
                     android:textColor="#CCCCCC"
                     android:fontFamily="monospace" />
 
-                <TextView
-                    android:id="@+id/currentCueTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Current Cue: Standard Cue"
-                    android:textSize="14sp"
-                    android:textColor="#FF6200EE"
-                    android:fontFamily="monospace"
-                    android:layout_marginTop="8dp" />
-
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Controls Card -->
+        <!-- Injection Progress Card -->
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -95,63 +85,34 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Trajectory Controls"
+                    android:text="Injection Progress"
                     android:textSize="18sp"
                     android:textColor="#FFFFFF"
                     android:textStyle="bold"
                     android:layout_marginBottom="12dp" />
 
-                <!-- Trajectory Toggle -->
-                <LinearLayout
+                <TextView
+                    android:id="@+id/progressTextView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="16dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Show Trajectory"
-                        android:textSize="16sp"
-                        android:textColor="#CCCCCC" />
-
-                    <Switch
-                        android:id="@+id/trajectorySwitch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:thumbTint="#6200EE"
-                        android:trackTint="#3700B3" />
-
-                </LinearLayout>
-
-                <!-- Power Control -->
-                <TextView
-                    android:id="@+id/powerTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Power: 15.0"
-                    android:textSize="16sp"
+                    android:text="Ready to inject"
+                    android:textSize="14sp"
                     android:textColor="#CCCCCC"
                     android:layout_marginBottom="8dp" />
 
-                <SeekBar
-                    android:id="@+id/powerSeekBar"
+                <ProgressBar
+                    android:id="@+id/progressBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:max="300"
-                    android:progress="150"
-                    android:layout_marginBottom="16dp"
-                    android:progressTint="#6200EE"
-                    android:thumbTint="#6200EE" />
+                    android:visibility="gone"
+                    android:indeterminate="true"
+                    style="?android:attr/progressBarStyleHorizontal" />
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Service Control Buttons -->
+        <!-- Injection Control Buttons -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -159,31 +120,43 @@
             android:layout_marginBottom="16dp">
 
             <Button
-                android:id="@+id/startButton"
+                android:id="@+id/injectButton"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
-                android:text="Start Service"
+                android:text="Inject Mod"
                 android:textSize="16sp"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#6200EE"
                 app:cornerRadius="8dp" />
 
             <Button
-                android:id="@+id/stopButton"
+                android:id="@+id/installButton"
                 android:layout_width="0dp"
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:text="Stop Service"
+                android:text="Install Modded APK"
                 android:textSize="16sp"
                 android:textColor="#FFFFFF"
-                android:backgroundTint="#CF6679"
+                android:backgroundTint="#03DAC6"
                 android:enabled="false"
                 app:cornerRadius="8dp" />
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="16dp"
+            android:text="Cancel"
+            android:textSize="16sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#CF6679"
+            android:enabled="false"
+            app:cornerRadius="8dp" />
 
         <!-- Instructions Card -->
         <com.google.android.material.card.MaterialCardView
@@ -212,7 +185,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1. Grant overlay permission when prompted\n2. Adjust power slider for shot strength\n3. Start the service before entering the game\n4. Trajectory will overlay on the game screen\n5. The system automatically adapts to your screen resolution"
+                    android:text="1. Ensure 8 Ball Pool is installed on your device\n2. The app will automatically detect the game version\n3. Tap 'Inject Mod' to modify the game APK\n4. Wait for injection to complete\n5. Tap 'Install Modded APK' to install the modified game\n6. The modded game will have trajectory prediction built-in\n7. No overlay permissions needed - trajectory is injected directly into the game"
                     android:textSize="14sp"
                     android:textColor="#CCCCCC"
                     android:lineSpacingExtra="4dp" />
@@ -224,7 +197,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Version 1.0"
+            android:text="Version 2.0 - Direct Injection"
             android:textSize="12sp"
             android:textColor="#666666"
             android:layout_marginBottom="16dp" />
