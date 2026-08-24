@@ -63,6 +63,16 @@
                     android:textColor="#CCCCCC"
                     android:fontFamily="monospace" />
 
+                <TextView
+                    android:id="@+id/currentCueTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Current Cue: Standard Cue"
+                    android:textSize="14sp"
+                    android:textColor="#FF6200EE"
+                    android:fontFamily="monospace"
+                    android:layout_marginTop="8dp" />
+
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>

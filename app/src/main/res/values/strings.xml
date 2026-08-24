@@ -6,4 +6,5 @@
     <string name="stop_service">Stop Trajectory Service</string>
     <string name="service_running">Trajectory service is running</string>
     <string name="service_stopped">Trajectory service is stopped</string>
+    <string name="accessibility_service_description">HadesLoader - 8 Ball Pool trajectory prediction with automatic cue detection</string>
 </resources>
