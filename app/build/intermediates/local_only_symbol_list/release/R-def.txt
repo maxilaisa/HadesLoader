@@ -1,0 +1,32 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color trajectory_color
+color trajectory_dashed
+color white
+id cancelButton
+id gameStatusTextView
+id injectButton
+id installButton
+id progressBar
+id progressTextView
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string cancel
+string inject_mod
+string injection_complete
+string injection_failed
+string modded_apk_saved
+string notification_permission_message
+string notification_permission_title
+string save_apk
+string storage_permission_message
+string storage_permission_title
+style Theme.HadesLoader

@@ -1,0 +1,256 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:2:1-31:12
+INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:2:1-31:12
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\narut\.gradle\caches\transforms-3\9be985b8cdd577b5f02798e5272aea8d\transformed\material-1.9.0\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\narut\.gradle\caches\transforms-3\b9143c95adcf3e0aaa8c0b02755fa8c5\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\narut\.gradle\caches\transforms-3\ed7257ff8cccbcf6988cebe75e36fdef\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\narut\.gradle\caches\transforms-3\bb350744a20abfb71265a9e802eb0212\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\ffe7a2619be74c7a126ef550224f18e3\transformed\viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\narut\.gradle\caches\transforms-3\9ca6a88ef26b4f63557a5257712bb60e\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\narut\.gradle\caches\transforms-3\3ea27dade46de4bed62d46d270c33d31\transformed\activity-1.6.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\9d43e45bd8925162b0510552bc946b2d\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\68b711e271bbffd9d74d6cec17430e2e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\1a63fdd7fe889dfe51819e5d5a13a24b\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\d33786c18e7acc5b2a7d69c3096e3f96\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\af756582fa3700b1ffb9cd60b3c31ec1\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\35cc213adaf1fd25ecd98646dc00bc40\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\0d4e4f6162b89d1540720cc27a428a70\transformed\drawerlayout-1.1.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\5a950398a069926bc99953d5318cb28a\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\a53a5985ffa3b6334928202d51a208d2\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\f8abff52643fe8d3af77f4374a33beac\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\3770720a2acfebc8fcaaa0a654368680\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\c82a2f8b530a2ac37f62d50d85368370\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\26004ebb2c663cda8dc400ed81509ed9\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\35f52dd533983564a03ef0e6623a46e4\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.core:core-ktx:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9a7f4c669425f2a6c407ec4b4ac4ca7c\transformed\core-ktx-1.10.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\01a092412e21cb9cde7536e684558112\transformed\savedstate-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\narut\.gradle\caches\transforms-3\4a91ff9ca0490c10a7c4e0caab460b2c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\d6548d0a779ffd8fdf02e017afbb07df\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\3135de8bd4666e767afc2d66efc8d792\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\3c6436abac4ab8c0656eea3e2482b786\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\61ba40a6e020402d527aed9e7df440b0\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\bf8691e56baf8c2004f864af3ebfdf43\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\2af9d1c7f42d43f2d374ff4090c52f4e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\c7104cd1e097b934c682c0643853bf1b\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\narut\.gradle\caches\transforms-3\ff9a03a370658b3f1f3554738f29a019\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\0a255c30c3e4e7633f9da010ae69533f\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\narut\.gradle\caches\transforms-3\b74e88114fad8929503e1f062a8970bb\transformed\core-runtime-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\2f0f3832123d9b6c464da047bfc4446f\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\ee9b43688175c1759b7a2d3d0aa950b7\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\a328d953612b09fbb0b89a9ede7bc681\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+	package
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:4:5-43
+		INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:7:5-80
+	android:name
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:7:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:9:5-77
+	android:name
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:9:22-74
+application
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:11:5-29:19
+INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:11:5-29:19
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\narut\.gradle\caches\transforms-3\9be985b8cdd577b5f02798e5272aea8d\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\narut\.gradle\caches\transforms-3\9be985b8cdd577b5f02798e5272aea8d\transformed\material-1.9.0\AndroidManifest.xml:24:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\narut\.gradle\caches\transforms-3\b9143c95adcf3e0aaa8c0b02755fa8c5\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\narut\.gradle\caches\transforms-3\b9143c95adcf3e0aaa8c0b02755fa8c5\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\bf8691e56baf8c2004f864af3ebfdf43\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\bf8691e56baf8c2004f864af3ebfdf43\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\2af9d1c7f42d43f2d374ff4090c52f4e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\2af9d1c7f42d43f2d374ff4090c52f4e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:16:9-35
+	android:label
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:14:9-36
+	android:roundIcon
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:15:9-54
+	tools:targetApi
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:18:9-29
+	android:icon
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:13:9-43
+	android:allowBackup
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:12:9-35
+	android:theme
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:17:9-49
+activity#com.hadesloader.poolinjector.MainActivity
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:20:9-28:20
+	android:exported
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:22:13-36
+	android:theme
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:23:13-53
+	android:name
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:21:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:24:13-27:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:25:17-69
+	android:name
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:25:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:26:27-74
+uses-sdk
+INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\narut\.gradle\caches\transforms-3\9be985b8cdd577b5f02798e5272aea8d\transformed\material-1.9.0\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.9.0] C:\Users\narut\.gradle\caches\transforms-3\9be985b8cdd577b5f02798e5272aea8d\transformed\material-1.9.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\narut\.gradle\caches\transforms-3\b9143c95adcf3e0aaa8c0b02755fa8c5\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\narut\.gradle\caches\transforms-3\b9143c95adcf3e0aaa8c0b02755fa8c5\transformed\constraintlayout-2.1.4\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\narut\.gradle\caches\transforms-3\ed7257ff8cccbcf6988cebe75e36fdef\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\narut\.gradle\caches\transforms-3\ed7257ff8cccbcf6988cebe75e36fdef\transformed\appcompat-resources-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\narut\.gradle\caches\transforms-3\bb350744a20abfb71265a9e802eb0212\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\narut\.gradle\caches\transforms-3\bb350744a20abfb71265a9e802eb0212\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\ffe7a2619be74c7a126ef550224f18e3\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\ffe7a2619be74c7a126ef550224f18e3\transformed\viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\narut\.gradle\caches\transforms-3\9ca6a88ef26b4f63557a5257712bb60e\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\narut\.gradle\caches\transforms-3\9ca6a88ef26b4f63557a5257712bb60e\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\narut\.gradle\caches\transforms-3\3ea27dade46de4bed62d46d270c33d31\transformed\activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.6.0] C:\Users\narut\.gradle\caches\transforms-3\3ea27dade46de4bed62d46d270c33d31\transformed\activity-1.6.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\9d43e45bd8925162b0510552bc946b2d\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\9d43e45bd8925162b0510552bc946b2d\transformed\dynamicanimation-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\68b711e271bbffd9d74d6cec17430e2e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\68b711e271bbffd9d74d6cec17430e2e\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\1a63fdd7fe889dfe51819e5d5a13a24b\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\1a63fdd7fe889dfe51819e5d5a13a24b\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\d33786c18e7acc5b2a7d69c3096e3f96\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\d33786c18e7acc5b2a7d69c3096e3f96\transformed\lifecycle-viewmodel-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\af756582fa3700b1ffb9cd60b3c31ec1\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\af756582fa3700b1ffb9cd60b3c31ec1\transformed\lifecycle-viewmodel-savedstate-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\35cc213adaf1fd25ecd98646dc00bc40\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\35cc213adaf1fd25ecd98646dc00bc40\transformed\emoji2-views-helper-1.2.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\0d4e4f6162b89d1540720cc27a428a70\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\0d4e4f6162b89d1540720cc27a428a70\transformed\drawerlayout-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\5a950398a069926bc99953d5318cb28a\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\5a950398a069926bc99953d5318cb28a\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\a53a5985ffa3b6334928202d51a208d2\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\a53a5985ffa3b6334928202d51a208d2\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\f8abff52643fe8d3af77f4374a33beac\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\f8abff52643fe8d3af77f4374a33beac\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\3770720a2acfebc8fcaaa0a654368680\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\3770720a2acfebc8fcaaa0a654368680\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\c82a2f8b530a2ac37f62d50d85368370\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\c82a2f8b530a2ac37f62d50d85368370\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\26004ebb2c663cda8dc400ed81509ed9\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\26004ebb2c663cda8dc400ed81509ed9\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\35f52dd533983564a03ef0e6623a46e4\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] C:\Users\narut\.gradle\caches\transforms-3\35f52dd533983564a03ef0e6623a46e4\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core-ktx:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9a7f4c669425f2a6c407ec4b4ac4ca7c\transformed\core-ktx-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9a7f4c669425f2a6c407ec4b4ac4ca7c\transformed\core-ktx-1.10.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\01a092412e21cb9cde7536e684558112\transformed\savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\01a092412e21cb9cde7536e684558112\transformed\savedstate-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\narut\.gradle\caches\transforms-3\4a91ff9ca0490c10a7c4e0caab460b2c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\narut\.gradle\caches\transforms-3\4a91ff9ca0490c10a7c4e0caab460b2c\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\d6548d0a779ffd8fdf02e017afbb07df\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\d6548d0a779ffd8fdf02e017afbb07df\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\3135de8bd4666e767afc2d66efc8d792\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\3135de8bd4666e767afc2d66efc8d792\transformed\lifecycle-runtime-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\3c6436abac4ab8c0656eea3e2482b786\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\3c6436abac4ab8c0656eea3e2482b786\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\61ba40a6e020402d527aed9e7df440b0\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\61ba40a6e020402d527aed9e7df440b0\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\bf8691e56baf8c2004f864af3ebfdf43\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\bf8691e56baf8c2004f864af3ebfdf43\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\2af9d1c7f42d43f2d374ff4090c52f4e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\2af9d1c7f42d43f2d374ff4090c52f4e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\c7104cd1e097b934c682c0643853bf1b\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\c7104cd1e097b934c682c0643853bf1b\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\narut\.gradle\caches\transforms-3\ff9a03a370658b3f1f3554738f29a019\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\narut\.gradle\caches\transforms-3\ff9a03a370658b3f1f3554738f29a019\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\0a255c30c3e4e7633f9da010ae69533f\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] C:\Users\narut\.gradle\caches\transforms-3\0a255c30c3e4e7633f9da010ae69533f\transformed\lifecycle-livedata-core-2.5.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\narut\.gradle\caches\transforms-3\b74e88114fad8929503e1f062a8970bb\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] C:\Users\narut\.gradle\caches\transforms-3\b74e88114fad8929503e1f062a8970bb\transformed\core-runtime-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\2f0f3832123d9b6c464da047bfc4446f\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\2f0f3832123d9b6c464da047bfc4446f\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\ee9b43688175c1759b7a2d3d0aa950b7\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\ee9b43688175c1759b7a2d3d0aa950b7\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\a328d953612b09fbb0b89a9ede7bc681\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\narut\.gradle\caches\transforms-3\a328d953612b09fbb0b89a9ede7bc681\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\2af9d1c7f42d43f2d374ff4090c52f4e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\narut\.gradle\caches\transforms-3\2af9d1c7f42d43f2d374ff4090c52f4e\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.2.0] C:\Users\narut\.gradle\caches\transforms-3\bc31f56fa28068c4e37e2fd96a8781b4\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+permission#com.hadesloader.poolinjector.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+uses-permission#com.hadesloader.poolinjector.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.10.1] C:\Users\narut\.gradle\caches\transforms-3\9bc178e40d0bbab14219926d57075315\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\narut\.gradle\caches\transforms-3\eba9bc50409649809b0e478b8574bc3e\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78

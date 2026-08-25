@@ -1,0 +1,264 @@
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:7: Warning: READ_EXTERNAL_STORAGE is deprecated (and is not granted) when targeting Android 13+. If you need to query or interact with MediaStore or media files on the shared storage, you should instead use one or more new storage permissions: READ_MEDIA_IMAGES, READ_MEDIA_VIDEO or READ_MEDIA_AUDIO. [ScopedStorage]
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\AndroidManifest.xml:8: Warning: WRITE_EXTERNAL_STORAGE is deprecated (and is not granted) when targeting Android 13+. If you need to write to shared storage, use the MediaStore.createWriteRequest intent. [ScopedStorage]
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ScopedStorage":
+   Scoped storage is enforced on Android 10+ (or Android 11+ if using
+   requestLegacyExternalStorage). In particular, WRITE_EXTERNAL_STORAGE will
+   no longer provide write access to all files; it will provide the equivalent
+   of READ_EXTERNAL_STORAGE instead.
+
+   As of Android 13, if you need to query or interact with MediaStore or media
+   files on the shared storage, you should be using instead one or more new
+   storage permissions:
+   * android.permission.READ_MEDIA_IMAGES
+   * android.permission.READ_MEDIA_VIDEO
+   * android.permission.READ_MEDIA_AUDIO
+
+   and then add maxSdkVersion="33" to the older permission. See the developer
+   guide for how to do this:
+   https://developer.android.com/about/versions/13/behavior-changes-13#granula
+   r-media-permissions
+
+   The MANAGE_EXTERNAL_STORAGE permission can be used to manage all files, but
+   it is rarely necessary and most apps on Google Play are not allowed to use
+   it. Most apps should instead migrate to use scoped storage. To modify or
+   delete files, apps should request write access from the user as described
+   at https://goo.gle/android-mediastore-createwriterequest.
+
+   To learn more, read these resources: Play policy:
+   https://goo.gle/policy-storage-help Allowable use cases:
+   https://goo.gle/policy-storage-usecases
+
+   https://goo.gle/android-storage-usecases
+
+C:\Users\narut\HadesLoader\HadesLoader\app\build.gradle:36: Warning: A newer version of androidx.core:core-ktx than 1.10.1 is available: 1.19.0 [GradleDependency]
+    implementation 'androidx.core:core-ktx:1.10.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\build.gradle:37: Warning: A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.8.0 [GradleDependency]
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\build.gradle:38: Warning: A newer version of com.google.android.material:material than 1.9.0 is available: 1.14.0 [GradleDependency]
+    implementation 'com.google.android.material:material:1.9.0'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\build.gradle:39: Warning: A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.2 [GradleDependency]
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:6: Warning: Possible overdraw: Root element paints background #1E1E1E with a theme that also paints a background (inferred theme is @style/Theme_HadesLoader) [Overdraw]
+    android:background="#1E1E1E"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "Overdraw":
+   If you set a background drawable on a root view, then you should use a
+   custom theme where the theme background is null. Otherwise, the theme
+   background will be painted first, only to have your custom background
+   completely cover it; this is called "overdraw".
+
+   NOTE: This detector relies on figuring out which layouts are associated
+   with which activities based on scanning the Java code, and it's currently
+   doing that using an inexact pattern matching algorithm. Therefore, it can
+   incorrectly conclude which activity the layout is associated with and then
+   wrongly complain that a background-theme is hidden.
+
+   If you want your custom background on multiple pages, then you should
+   consider making a custom theme with your custom background and just using
+   that theme instead of a root element background.
+
+   Of course it's possible that your custom drawable is translucent and you
+   want it to be mixed with the background. However, you will get better
+   performance if you pre-mix the background with your drawable and use that
+   resulting image or color as a custom theme background instead.
+
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\colors.xml:3: Warning: The resource R.color.purple_200 appears to be unused [UnusedResources]
+    <color name="purple_200">#FFBB86FC</color>
+           ~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\colors.xml:10: Warning: The resource R.color.trajectory_color appears to be unused [UnusedResources]
+    <color name="trajectory_color">#FFFF0000</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\colors.xml:11: Warning: The resource R.color.trajectory_dashed appears to be unused [UnusedResources]
+    <color name="trajectory_dashed">#FF00FF00</color>
+           ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:2: Warning: The resource R.string.app_name appears to be unused [UnusedResources]
+    <string name="app_name">HadesLoader</string>
+            ~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:3: Warning: The resource R.string.storage_permission_title appears to be unused [UnusedResources]
+    <string name="storage_permission_title">Storage Permission Required</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:4: Warning: The resource R.string.storage_permission_message appears to be unused [UnusedResources]
+    <string name="storage_permission_message">Please grant storage permission to modify the game APK</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:5: Warning: The resource R.string.notification_permission_title appears to be unused [UnusedResources]
+    <string name="notification_permission_title">Notification Permission Required</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.notification_permission_message appears to be unused [UnusedResources]
+    <string name="notification_permission_message">Please grant notification permission to receive injection progress updates</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:7: Warning: The resource R.string.inject_mod appears to be unused [UnusedResources]
+    <string name="inject_mod">Inject Trajectory Mod</string>
+            ~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:8: Warning: The resource R.string.save_apk appears to be unused [UnusedResources]
+    <string name="save_apk">Save APK to Downloads</string>
+            ~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:9: Warning: The resource R.string.cancel appears to be unused [UnusedResources]
+    <string name="cancel">Cancel</string>
+            ~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:10: Warning: The resource R.string.injection_complete appears to be unused [UnusedResources]
+    <string name="injection_complete">Injection complete</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:11: Warning: The resource R.string.injection_failed appears to be unused [UnusedResources]
+    <string name="injection_failed">Injection failed</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\values\strings.xml:12: Warning: The resource R.string.modded_apk_saved appears to be unused [UnusedResources]
+    <string name="modded_apk_saved">Modded APK saved to Downloads folder</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UnusedResources":
+   Unused resources make applications larger and slow down builds.
+
+
+   The unused resource check can ignore tests. If you want to include
+   resources that are only referenced from tests, consider packaging them in a
+   test source set instead.
+
+   You can include test sources in the unused resource check by setting the
+   system property lint.unused-resources.include-tests =true, and to exclude
+   them (usually for performance reasons), use
+   lint.unused-resources.exclude-tests =true.
+   ,
+
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:122: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+            <Button
+             ~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:134: Warning: Buttons in button bars should be borderless; use style="?android:attr/buttonBarButtonStyle" (and ?android:attr/buttonBarStyle on the parent) [ButtonStyle]
+            <Button
+             ~~~~~~
+
+   Explanation for issues of type "ButtonStyle":
+   Button bars typically use a borderless style for the buttons. Set the
+   style="?android:attr/buttonBarButtonStyle" attribute on each of the
+   buttons, and set style="?android:attr/buttonBarStyle" on the parent layout
+
+   https://material.io/components/dialogs/
+
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:76: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                gameStatusTextView.text = "Game Status: 8 Ball Pool ${gameStatus.version} - Ready for injection"
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:76: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                gameStatusTextView.text = "Game Status: 8 Ball Pool ${gameStatus.version} - Ready for injection"
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:76: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                gameStatusTextView.text = "Game Status: 8 Ball Pool ${gameStatus.version} - Ready for injection"
+                                                                                         ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:85: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                gameStatusTextView.text = "Game Status: 8 Ball Pool not found"
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:94: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                gameStatusTextView.text = "Game Status: Incompatible version (${gameStatus.currentVersion})"
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:94: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                gameStatusTextView.text = "Game Status: Incompatible version (${gameStatus.currentVersion})"
+                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:118: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        progressTextView.text = "Starting injection..."
+                                 ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:122: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            progressTextView.text = "Extracting game APK..."
+                                     ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:130: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        progressTextView.text = "Injection complete! Ready to install."
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:136: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+                        progressTextView.text = "Injection failed: ${result.reason}"
+                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:136: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+                        progressTextView.text = "Injection failed: ${result.reason}"
+                                                 ~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:149: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+        progressTextView.text = "Saving modded APK to Downloads..."
+                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:154: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            progressTextView.text = "Modded APK saved to Downloads. Install it manually."
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:161: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            progressTextView.text = "Failed to save APK"
+                                     ~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\java\com\hadesloader\poolinjector\MainActivity.kt:170: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            progressTextView.text = "Injection cancelled"
+                                     ~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:18: Warning: Hardcoded string "HadesLoader", should use @string resource [HardcodedText]
+            android:text="HadesLoader"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:28: Warning: Hardcoded string "8 Ball Pool Direct Injector - Minimal Permissions", should use @string resource [HardcodedText]
+            android:text="8 Ball Pool Direct Injector - Minimal Permissions"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:51: Warning: Hardcoded string "Game Status", should use @string resource [HardcodedText]
+                    android:text="Game Status"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:61: Warning: Hardcoded string "Checking game installation...", should use @string resource [HardcodedText]
+                    android:text="Checking game installation..."
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:88: Warning: Hardcoded string "Injection Progress", should use @string resource [HardcodedText]
+                    android:text="Injection Progress"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:98: Warning: Hardcoded string "Ready to inject", should use @string resource [HardcodedText]
+                    android:text="Ready to inject"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:128: Warning: Hardcoded string "Inject Mod", should use @string resource [HardcodedText]
+                android:text="Inject Mod"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:140: Warning: Hardcoded string "Save APK to Downloads", should use @string resource [HardcodedText]
+                android:text="Save APK to Downloads"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:154: Warning: Hardcoded string "Cancel", should use @string resource [HardcodedText]
+            android:text="Cancel"
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:179: Warning: Hardcoded string "Instructions", should use @string resource [HardcodedText]
+                    android:text="Instructions"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:188: Warning: Hardcoded string "1. Ensure 8 Ball Pool is installed on your devicen2. Grant storage and notification permissions (minimal)n3. The app will automatically detect the game versionn4. Tap 'Inject Mod' to modify the game APKn5. Wait for injection to completen6. Tap 'Save APK to Downloads' to save the modded gamen7. Go to Downloads folder and install the modded APKn8. The modded game will have trajectory prediction built-inn9. Trajectory only shows during matches - no overlay needed", should use @string resource [HardcodedText]
+                    android:text="1. Ensure 8 Ball Pool is installed on your device\n2. Grant storage and notification permissions (minimal)\n3. The app will automatically detect the game version\n4. Tap 'Inject Mod' to modify the game APK\n5. Wait for injection to complete\n6. Tap 'Save APK to Downloads' to save the modded game\n7. Go to Downloads folder and install the modded APK\n8. The modded game will have trajectory prediction built-in\n9. Trajectory only shows during matches - no overlay needed"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\narut\HadesLoader\HadesLoader\app\src\main\res\layout\activity_main.xml:200: Warning: Hardcoded string "Version 2.0 - Direct Injection", should use @string resource [HardcodedText]
+            android:text="Version 2.0 - Direct Injection"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+0 errors, 50 warnings

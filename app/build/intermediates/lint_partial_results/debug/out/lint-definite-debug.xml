@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.0" type="incidents">
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;HadesLoader&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="18"
+            column="13"
+            startOffset="628"
+            endLine="18"
+            endColumn="39"
+            endOffset="654"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;8 Ball Pool Direct Injector - Minimal Permissions&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="28"
+            column="13"
+            startOffset="989"
+            endLine="28"
+            endColumn="77"
+            endOffset="1053"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Game Status&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="51"
+            column="21"
+            startOffset="1920"
+            endLine="51"
+            endColumn="47"
+            endOffset="1946"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Checking game installation...&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="61"
+            column="21"
+            startOffset="2359"
+            endLine="61"
+            endColumn="65"
+            endOffset="2403"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Injection Progress&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="88"
+            column="21"
+            startOffset="3388"
+            endLine="88"
+            endColumn="54"
+            endOffset="3421"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Ready to inject&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="98"
+            column="21"
+            startOffset="3832"
+            endLine="98"
+            endColumn="51"
+            endOffset="3862"/>
+    </incident>
+
+    <incident
+        id="ButtonStyle"
+        severity="warning"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <fix-composite
+            description="Make borderless">
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarStyle">
+                <range
+                    file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="4515"
+                    endOffset="5721"/>
+            </fix-attribute>
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarButtonStyle">
+                <range
+                    file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="4732"
+                    endOffset="5180"/>
+            </fix-attribute>
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarButtonStyle">
+                <range
+                    file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="5194"
+                    endOffset="5696"/>
+            </fix-attribute>
+        </fix-composite>
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="122"
+            column="14"
+            startOffset="4733"
+            endLine="122"
+            endColumn="20"
+            endOffset="4739"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Inject Mod&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="128"
+            column="17"
+            startOffset="4980"
+            endLine="128"
+            endColumn="42"
+            endOffset="5005"/>
+    </incident>
+
+    <incident
+        id="ButtonStyle"
+        severity="warning"
+        message="Buttons in button bars should be borderless; use `style=&quot;?android:attr/buttonBarButtonStyle&quot;` (and `?android:attr/buttonBarStyle` on the parent)">
+        <fix-composite
+            description="Make borderless">
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarStyle">
+                <range
+                    file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="4515"
+                    endOffset="5721"/>
+            </fix-attribute>
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarButtonStyle">
+                <range
+                    file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="4732"
+                    endOffset="5180"/>
+            </fix-attribute>
+            <fix-attribute
+                description="Set style=&quot;?android:attr/buttonBarButtonStyle&quot;"
+                attribute="style"
+                value="?android:attr/buttonBarButtonStyle">
+                <range
+                    file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+                    startOffset="5194"
+                    endOffset="5696"/>
+            </fix-attribute>
+        </fix-composite>
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="134"
+            column="14"
+            startOffset="5195"
+            endLine="134"
+            endColumn="20"
+            endOffset="5201"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Save APK to Downloads&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="140"
+            column="17"
+            startOffset="5445"
+            endLine="140"
+            endColumn="53"
+            endOffset="5481"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Cancel&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="154"
+            column="13"
+            startOffset="5930"
+            endLine="154"
+            endColumn="34"
+            endOffset="5951"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Instructions&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="179"
+            column="21"
+            startOffset="6888"
+            endLine="179"
+            endColumn="48"
+            endOffset="6915"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;1. Ensure 8 Ball Pool is installed on your device\n2. Grant storage and notification permissions (minimal)\n3. The app will automatically detect the game version\n4. Tap &apos;Inject Mod&apos; to modify the game APK\n5. Wait for injection to complete\n6. Tap &apos;Save APK to Downloads&apos; to save the modded game\n7. Go to Downloads folder and install the modded APK\n8. The modded game will have trajectory prediction built-in\n9. Trajectory only shows during matches - no overlay needed&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="188"
+            column="21"
+            startOffset="7271"
+            endLine="188"
+            endColumn="508"
+            endOffset="7758"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Version 2.0 - Direct Injection&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="200"
+            column="13"
+            startOffset="8124"
+            endLine="200"
+            endColumn="58"
+            endOffset="8169"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="76"
+            column="43"
+            startOffset="2483"
+            endLine="76"
+            endColumn="113"
+            endOffset="2553"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="76"
+            column="44"
+            startOffset="2484"
+            endLine="76"
+            endColumn="69"
+            endOffset="2509"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="76"
+            column="90"
+            startOffset="2530"
+            endLine="76"
+            endColumn="112"
+            endOffset="2552"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="85"
+            column="44"
+            startOffset="2972"
+            endLine="85"
+            endColumn="78"
+            endOffset="3006"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="94"
+            column="43"
+            startOffset="3420"
+            endLine="94"
+            endColumn="109"
+            endOffset="3486"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="94"
+            column="44"
+            startOffset="3421"
+            endLine="94"
+            endColumn="79"
+            endOffset="3456"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="118"
+            column="34"
+            startOffset="4336"
+            endLine="118"
+            endColumn="55"
+            endOffset="4357"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="122"
+            column="38"
+            startOffset="4506"
+            endLine="122"
+            endColumn="60"
+            endOffset="4528"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="130"
+            column="50"
+            startOffset="4869"
+            endLine="130"
+            endColumn="87"
+            endOffset="4906"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="Do not concatenate text displayed with `setText`. Use resource string with placeholders.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="136"
+            column="49"
+            startOffset="5271"
+            endLine="136"
+            endColumn="85"
+            endOffset="5307"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="136"
+            column="50"
+            startOffset="5272"
+            endLine="136"
+            endColumn="68"
+            endOffset="5290"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="149"
+            column="34"
+            startOffset="5754"
+            endLine="149"
+            endColumn="67"
+            endOffset="5787"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="154"
+            column="38"
+            startOffset="5953"
+            endLine="154"
+            endColumn="89"
+            endOffset="6004"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="161"
+            column="38"
+            startOffset="6267"
+            endLine="161"
+            endColumn="56"
+            endOffset="6285"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*sourceProvider*0*javaDir*0}/com/hadesloader/poolinjector/MainActivity.kt"
+            line="170"
+            column="38"
+            startOffset="6591"
+            endLine="170"
+            endColumn="57"
+            endOffset="6610"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.core:core-ktx than 1.10.1 is available: 1.19.0">
+        <fix-replace
+            description="Change to 1.19.0"
+            family="Update versions"
+            oldString="1.10.1"
+            replacement="1.19.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="36"
+            column="20"
+            startOffset="739"
+            endLine="36"
+            endColumn="51"
+            endOffset="770"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.appcompat:appcompat than 1.6.1 is available: 1.8.0">
+        <fix-replace
+            description="Change to 1.8.0"
+            family="Update versions"
+            oldString="1.6.1"
+            replacement="1.8.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="37"
+            column="20"
+            startOffset="790"
+            endLine="37"
+            endColumn="56"
+            endOffset="826"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of com.google.android.material:material than 1.9.0 is available: 1.14.0">
+        <fix-replace
+            description="Change to 1.14.0"
+            family="Update versions"
+            oldString="1.9.0"
+            replacement="1.14.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="38"
+            column="20"
+            startOffset="846"
+            endLine="38"
+            endColumn="64"
+            endOffset="890"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.constraintlayout:constraintlayout than 2.1.4 is available: 2.2.2">
+        <fix-replace
+            description="Change to 2.2.2"
+            family="Update versions"
+            oldString="2.1.4"
+            replacement="2.2.2"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="39"
+            column="20"
+            startOffset="910"
+            endLine="39"
+            endColumn="70"
+            endOffset="960"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `#1E1E1E` with a theme that also paints a background (inferred theme is `@style/Theme_HadesLoader`)">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="6"
+            column="5"
+            startOffset="251"
+            endLine="6"
+            endColumn="33"
+            endOffset="279"/>
+    </incident>
+
+</incidents>

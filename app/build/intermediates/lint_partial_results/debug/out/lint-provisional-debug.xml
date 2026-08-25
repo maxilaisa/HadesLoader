@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.1.0" type="conditional_incidents">
+
+    <incident
+        id="ScopedStorage"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*sourceProvider*0*manifest*0}"
+            line="7"
+            column="36"
+            startOffset="290"
+            endLine="7"
+            endColumn="76"
+            endOffset="330"/>
+        <map>
+            <entry
+                name="maxSdkVersion"
+                int="2147483647"/>
+            <entry
+                name="read"
+                boolean="true"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ScopedStorage"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*sourceProvider*0*manifest*0}"
+            line="8"
+            column="36"
+            startOffset="370"
+            endLine="8"
+            endColumn="77"
+            endOffset="411"/>
+        <map>
+            <entry
+                name="maxSdkVersion"
+                int="2147483647"/>
+            <entry
+                name="read"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 33">
+        <fix-replace
+            description="Delete tools:targetApi"
+            replacement="">
+            <range
+                file="${:app*debug*sourceProvider*0*manifest*0}"
+                startOffset="771"
+                endOffset="791"/>
+        </fix-replace>
+        <location
+            file="${:app*debug*sourceProvider*0*manifest*0}"
+            line="18"
+            column="9"
+            startOffset="771"
+            endLine="18"
+            endColumn="29"
+            endOffset="791"/>
+        <map>
+            <condition minGE="ffffffff00000000"/>
+        </map>
+    </incident>
+
+</incidents>
