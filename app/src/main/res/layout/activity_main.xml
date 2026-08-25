@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="8 Ball Pool Direct Injector"
+            android:text="8 Ball Pool Direct Injector - Minimal Permissions"
             android:textSize="16sp"
             android:textColor="#AAAAAA"
             android:layout_marginBottom="32dp" />
@@ -137,7 +137,7 @@
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:text="Install Modded APK"
+                android:text="Save APK to Downloads"
                 android:textSize="16sp"
                 android:textColor="#FFFFFF"
                 android:backgroundTint="#03DAC6"
@@ -185,7 +185,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1. Ensure 8 Ball Pool is installed on your device\n2. The app will automatically detect the game version\n3. Tap 'Inject Mod' to modify the game APK\n4. Wait for injection to complete\n5. Tap 'Install Modded APK' to install the modified game\n6. The modded game will have trajectory prediction built-in\n7. No overlay permissions needed - trajectory is injected directly into the game"
+                    android:text="1. Ensure 8 Ball Pool is installed on your device\n2. Grant storage and notification permissions (minimal)\n3. The app will automatically detect the game version\n4. Tap 'Inject Mod' to modify the game APK\n5. Wait for injection to complete\n6. Tap 'Save APK to Downloads' to save the modded game\n7. Go to Downloads folder and install the modded APK\n8. The modded game will have trajectory prediction built-in\n9. Trajectory only shows during matches - no overlay needed"
                     android:textSize="14sp"
                     android:textColor="#CCCCCC"
                     android:lineSpacingExtra="4dp" />

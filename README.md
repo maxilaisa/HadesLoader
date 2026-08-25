@@ -5,11 +5,12 @@ An Android application that provides accurate ball trajectory prediction for 8 B
 ## Features
 
 - **Direct APK Injection**: Modifies the game APK to include trajectory prediction
-- **No Overlay Permissions**: Trajectory is built into the game, no overlay needed
+- **Minimal Permissions**: Only requires storage and notification permissions
+- **No Overlay/Accessibility**: Trajectory is built into the game, no overlay or accessibility services needed
+- **Match-Only Display**: Trajectory prediction only shows during actual matches
 - **Game-Accurate Physics**: Uses real 8 Ball Pool physics constants extracted from actual game source code
 - **Precise Trajectory Prediction**: Physics-based ball trajectory calculation with realistic collision detection
 - **Resolution Adaptive**: Automatically adapts to any phone screen resolution
-- **Customizable Power**: Adjustable shot power via slider control
 - **Pocket Detection**: Visual indicators for table pockets
 - **Cushion Physics**: Realistic ball bounce and cushion collision simulation
 - **Automatic Game Detection**: Automatically detects and verifies 8 Ball Pool installation
@@ -120,22 +121,21 @@ The injector uses a reference resolution system to ensure accuracy across differ
    - Download and install the official 8 Ball Pool game from Google Play Store
    - Ensure you have version 5.0.0 or higher installed
 
-2. **Enable Unknown Sources**
-   - Go to Settings > Security
-   - Enable "Install from Unknown Sources"
-
-3. **Install HadesLoader APK**
+2. **Install HadesLoader APK**
    - Transfer the HadesLoader APK to your device
    - Open the APK file
    - Follow the installation prompts
+   - Grant storage permission when requested
+   - Grant notification permission when requested
 
-4. **Injection Process**
+3. **Injection Process**
    - Open the HadesLoader app
    - The app will automatically detect if 8 Ball Pool is installed
    - Tap "Inject Mod" to modify the game APK
    - Wait for the injection process to complete
-   - Tap "Install Modded APK" to install the modified game
-   - Install the modded APK when prompted by the system
+   - Tap "Save APK to Downloads" to save the modded game
+   - Go to your Downloads folder
+   - Install the modded APK manually
 
 ## Usage
 
@@ -150,17 +150,19 @@ The injector uses a reference resolution system to ensure accuracy across differ
    - Tap "Inject Mod" button
    - Wait for the injection process to complete
    - Progress bar will show injection status
-   - When complete, "Install Modded APK" button will be enabled
+   - When complete, "Save APK to Downloads" button will be enabled
 
-3. **Install Modded Game**
-   - Tap "Install Modded APK" button
-   - System will prompt for APK installation
-   - Install the modded version of 8 Ball Pool
+3. **Save and Install Modded Game**
+   - Tap "Save APK to Downloads" button
+   - The modded APK will be saved to your Downloads folder
+   - Go to your Downloads folder
+   - Install the modded APK manually
    - The modded game will replace the original
 
 4. **Play with Trajectory**
    - Open the modded 8 Ball Pool game
    - Trajectory prediction will be built into the game
+   - Trajectory only shows during matches
    - No overlay needed - trajectory appears as part of game
    - Play normally with trajectory assistance
 
@@ -176,11 +178,13 @@ The trajectory calculation uses realistic physics parameters:
 
 ## Permissions
 
-The app requires the following permissions:
+The app requires minimal permissions:
 
-- `SYSTEM_ALERT_WINDOW`: Display overlay over other apps
-- `FOREGROUND_SERVICE`: Run trajectory service in background
-- `POST_NOTIFICATIONS`: Show service notifications
+- `READ_EXTERNAL_STORAGE`: Read game APK for modification
+- `WRITE_EXTERNAL_STORAGE`: Save modded APK to Downloads folder
+- `POST_NOTIFICATIONS`: Show injection progress notifications
+
+**Note**: No overlay, accessibility, or foreground service permissions are needed since the trajectory is injected directly into the game APK.
 
 ## Compatibility
 

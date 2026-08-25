@@ -132,29 +132,36 @@ class ApkModifier(private val context: Context) {
     }
     
     /**
-     * Installs the modded APK
+     * Saves the modded APK to external storage for manual installation
      */
-    fun installModdedApk(moddedApkPath: String): Boolean {
+    fun saveModdedApkToExternalStorage(moddedApkPath: String): String? {
         return try {
-            val apkFile = File(moddedApkPath)
-            if (!apkFile.exists()) {
-                return false
+            val sourceFile = File(moddedApkPath)
+            if (!sourceFile.exists()) {
+                return null
             }
             
-            // Create install intent
-            val intent = android.content.Intent(android.content.Intent.ACTION_VIEW).apply {
-                setDataAndType(
-                    android.net.Uri.fromFile(apkFile),
-                    "application/vnd.android.package-archive"
-                )
-                flags = android.content.Intent.FLAG_ACTIVITY_NEW_TASK
-                addFlags(android.content.Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            // Create download directory
+            val downloadDir = android.os.Environment.getExternalStoragePublicDirectory(
+                android.os.Environment.DIRECTORY_DOWNLOADS
+            )
+            
+            if (!downloadDir.exists()) {
+                downloadDir.mkdirs()
             }
             
-            context.startActivity(intent)
-            true
+            // Copy to downloads folder
+            val destFile = File(downloadDir, MODDED_APK_NAME)
+            
+            FileInputStream(sourceFile).use { input ->
+                FileOutputStream(destFile).use { output ->
+                    input.copyTo(output)
+                }
+            }
+            
+            destFile.absolutePath
         } catch (e: Exception) {
-            false
+            null
         }
     }
     

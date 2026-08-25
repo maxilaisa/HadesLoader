@@ -180,14 +180,14 @@ private val timeStep = 0.016f          // 60 FPS simulation
 
 ### Simplified Workflow
 1. Install 8 Ball Pool from Play Store
-2. Install HadesLoader APK
+2. Install HadesLoader APK (minimal permissions: storage + notifications)
 3. Open HadesLoader
 4. See game status (green if ready)
 5. Tap "Inject Mod"
 6. Wait for injection to complete
-7. Tap "Install Modded APK"
-8. Install modded game when prompted
-9. Play modded game with built-in trajectory
+7. Tap "Save APK to Downloads"
+8. Go to Downloads folder and install modded APK manually
+9. Play modded game with built-in trajectory (only shows during matches)
 
 ### Status Indicators
 - **Green**: "8 Ball Pool X.X.X - Ready for injection" - Game detected and compatible
@@ -202,19 +202,30 @@ private val timeStep = 0.016f          // 60 FPS simulation
 
 ## Security Considerations
 
-### No Overlay System Benefits
+### Minimal Permissions Approach
+- **Storage Permissions**: Required for APK modification and saving modded APK
+- **Notification Permissions**: Required for injection progress updates
+- **No overlay permissions**: Trajectory is built into the game, not displayed as overlay
+- **No accessibility permissions**: No screen monitoring or game state reading
+- **No install permissions**: Manual installation of modded APK (more transparent)
+
+### Security Benefits
 - No sensitive permissions required
 - No accessibility service monitoring
 - No screen reading capabilities
 - No foreground service overhead
-- Clean installation process
+- Manual APK installation (user control)
+- Clean, transparent process
+- No background services running
 
 ### Current Security Model
 - Local APK modification only
 - No internet connectivity required
-- Standard Android permissions (storage, install packages)
+- Minimal Android permissions (storage, notifications)
 - No sensitive data collection
 - No root access required
+- Manual installation process
+- No background services
 
 ### APK Signing
 - Modded APK must be properly signed

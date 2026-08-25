@@ -146,14 +146,20 @@ class MainActivity : AppCompatActivity() {
     }
     
     private fun installModdedApk(apkPath: String) {
-        progressTextView.text = "Preparing installation..."
+        progressTextView.text = "Saving modded APK to Downloads..."
         
-        if (apkModifier.installModdedApk(apkPath)) {
-            progressTextView.text = "Installation prompt shown. Complete installation to finish."
-            Toast.makeText(this, "Install the modded APK when prompted", Toast.LENGTH_LONG).show()
+        val savedPath = apkModifier.saveModdedApkToExternalStorage(apkPath)
+        
+        if (savedPath != null) {
+            progressTextView.text = "Modded APK saved to Downloads. Install it manually."
+            Toast.makeText(
+                this,
+                "Modded APK saved to Downloads folder. Install it manually to complete the process.",
+                Toast.LENGTH_LONG
+            ).show()
         } else {
-            progressTextView.text = "Installation failed"
-            Toast.makeText(this, "Failed to start installation", Toast.LENGTH_LONG).show()
+            progressTextView.text = "Failed to save APK"
+            Toast.makeText(this, "Failed to save modded APK to Downloads", Toast.LENGTH_LONG).show()
         }
     }
     
