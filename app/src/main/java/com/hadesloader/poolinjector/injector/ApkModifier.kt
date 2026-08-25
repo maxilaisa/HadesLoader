@@ -2,6 +2,7 @@ package com.hadesloader.poolinjector.injector
 
 import android.content.Context
 import android.content.pm.PackageManager
+import com.hadesloader.poolinjector.Constants
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -67,7 +68,7 @@ class ApkModifier(private val context: Context) {
      */
     private fun getGameApkPath(): String? {
         return try {
-            val packageInfo = context.packageManager.getPackageInfo(GAME_PACKAGE_NAME, 0)
+            val packageInfo = context.packageManager.getPackageInfo(GAME_PACKAGE_NAME as String, 0)
             packageInfo.applicationInfo?.sourceDir
         } catch (e: Exception) {
             null

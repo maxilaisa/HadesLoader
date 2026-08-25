@@ -1,18 +1,15 @@
-plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-}
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 
 android {
-    namespace 'com.hadesloader.poolinjector'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.hadesloader.poolinjector"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "2.0"
     }
 
     buildTypes {
@@ -30,21 +27,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    
-    buildFeatures {
-        buildConfig = true
-    }
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.4'
+    implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    
-    // OCR for cue detection
-    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:19.0.0'
-    
-    // Screen capture
-    implementation 'androidx.media:media:1.7.0'
 }

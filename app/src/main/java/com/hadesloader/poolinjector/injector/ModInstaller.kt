@@ -22,7 +22,7 @@ class ModInstaller(private val context: Context) {
      */
     fun isGameAvailable(): GameStatus {
         return try {
-            val packageInfo = context.packageManager.getPackageInfo(GAME_PACKAGE_NAME, 0)
+            val packageInfo = context.packageManager.getPackageInfo(GAME_PACKAGE_NAME as String, 0)
             val versionName = packageInfo.versionName ?: "Unknown"
             
             if (isVersionCompatible(versionName)) {
@@ -60,7 +60,7 @@ class ModInstaller(private val context: Context) {
      */
     fun getGameApkPath(): String? {
         return try {
-            val packageInfo = context.packageManager.getPackageInfo(GAME_PACKAGE_NAME, 0)
+            val packageInfo = context.packageManager.getPackageInfo(GAME_PACKAGE_NAME as String, 0)
             packageInfo.applicationInfo?.sourceDir
         } catch (e: Exception) {
             null
